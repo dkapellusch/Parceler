@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import { HomeComponent } from "./components/home/home.component";
+import { NgbAccordionConfig } from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -10,6 +11,7 @@ import { HomeComponent } from "./components/home/home.component";
     ],
     declarations:[
         HomeComponent
-    ]
+    ],
+    providers:[NgbAccordionConfig]
 })
 export class AppModule{}

@@ -11,16 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-    text: String = 'Hello world';
-
-    constructor() {
-
-    }
+    text: String = 'Hello world1';
     
     async test(event:Event) {
-        let response = await fetch("http://localhost:8081/api/test");
+        let response = await fetch("http://localhost:8081/api/test",{mode: 'cors'});
         let jsonResponse = await response.json();
         alert(JSON.stringify(jsonResponse));
+        let socket = new WebSocket("ws://localhost:8081");
+        socket.onmessage= (m) => {
+            alert("Wow I got " + JSON.stringify(m.data));
+        }
     }
     ngOnInit() {
         console.log('Main component initialized');
