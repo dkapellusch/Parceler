@@ -8,14 +8,16 @@ export function InitializeSocketServer(app: Express) {
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws: WebSocket) => {
-
+    
     ws.on('message', (message: string) => {
 
         console.log('received: %s', message);
         ws.send(`Hello, you sent -> ${message}`);
     });
-
+    
+    ws.on("error", () => console.log("connection error oh well"));
     ws.send('Hi there, I am a WebSocket server');
 });
+
 return server;
 }
