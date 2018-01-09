@@ -1,7 +1,6 @@
 import { Express } from "express-serve-static-core";
 import * as http from 'http';
 import * as WebSocket from 'ws';
-
 export function InitializeSocketServer(app: Express) {
     const server = http.createServer(app);
 

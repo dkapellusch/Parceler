@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 <h1>
     {{text}}
 </h1>
-<button (click)="test(el.value)" #el >A Button </button >
+<button class="btn btn-primary btn2" (click)="test(el.value)" #el >A Button </button >
 `
 })
 
