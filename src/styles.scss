@@ -1,12 +1,21 @@
 $color : rgb(76, 90, 82);
 
 
-body {
+* {
     background:$color !important;
     color: $color;
+    font-size: 3vh !important;
 }
 
 button {
     background:rgb(35, 36, 35) !important;
     color: $color;
+    width: 22vw;
+    height: 15vh;
+    padding: 30px !important;
+}
+
+div {
+    width: 100vw;
+    margin-left:auto;
 }

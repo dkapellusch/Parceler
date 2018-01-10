@@ -4,7 +4,6 @@ import { AlertService } from '../services/alert.service';
 @Component({
     selector: 'app',
  template: `
-<div style="margin-left:10px; margin-top:5px;">
     <div>
         <a [routerLink]="['/home']">Home</a>
     </div>
@@ -17,7 +16,6 @@ import { AlertService } from '../services/alert.service';
 
     <router-outlet></router-outlet>
         
-</div>
 
 `,
 styles: [` 
