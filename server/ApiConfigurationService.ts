@@ -5,6 +5,6 @@ export function InitializeApi(app: Express) {
     app.use(cors());
 
     app.get("/api/test", async(err, res) => {
-        res.json({ message: "hi" });
+        res.json({ message: "hi!!!" });
     });
 }

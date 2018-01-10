@@ -4,15 +4,15 @@ import { AlertService } from '../services/alert.service';
 @Component({
     selector: 'home',
  template: `
-<button class="btn btn-primary btn2" (click)="test(el.value)" #el >A Button </button >
+
+    <button class="btn btn-primary btn2" (click)="test(el.value)" #el> Send fetch and open websocket </button >
+
 `
 })
 
 export class HomeComponent implements OnInit {
 
-    constructor(private alertService: AlertService) {
-        
-    }
+    constructor(private alertService: AlertService) {}
    
     text: String = 'Hello world1';
     
@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
             this.alertService.AlertSomething("Wow I got " + JSON.stringify(m.data));
         }
     }
+
     ngOnInit() {
     }
 }

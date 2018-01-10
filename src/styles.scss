@@ -1,12 +1,12 @@
-$color : red;
+$color : rgb(76, 90, 82);
 
 
-body{
-    backgroud:$color;
+body {
+    background:$color !important;
     color: $color;
 }
 
-button{
-    backgroud:$color;
+button {
+    background:rgb(35, 36, 35) !important;
     color: $color;
 }
