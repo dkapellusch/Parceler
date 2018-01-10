@@ -4,19 +4,19 @@ import * as WebSocket from 'ws';
 export function InitializeSocketServer(app: Express) {
     const server = http.createServer(app);
 
-const wss = new WebSocket.Server({ server });
+    const socketServer = new WebSocket.Server({ server });
 
-wss.on('connection', (ws: WebSocket) => {
-    
-    ws.on('message', (message: string) => {
+    socketServer.on('connection', (socket: WebSocket) => {
 
-        console.log('received: %s', message);
-        ws.send(`Hello, you sent -> ${message}`);
+        socket.on('message', (message: string) => {
+
+            console.log('received: %s', message);
+            socket.send(`Hello, you sent -> ${message}`);
+        });
+
+        socket.on("error", () => console.log("connection error oh well"));
+        socket.send('Hi there, I am a WebSocket server');
     });
-    
-    ws.on("error", () => console.log("connection error oh well"));
-    ws.send('Hi there, I am a WebSocket server');
-});
 
-return server;
+    return server;
 }
