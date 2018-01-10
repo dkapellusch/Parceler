@@ -2,6 +2,7 @@ import "zone.js";
 import "./styles.scss";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css";
+import "reflect-metadata";
 
 window.onload = async () => {
     const anyWindow = window as any;
