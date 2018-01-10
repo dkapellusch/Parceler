@@ -17,14 +17,14 @@ import { AlertService } from "./services/alert.service";
     imports: [
         BrowserModule,
         StoreModule.forRoot({ count: counterReducer }),
-        StoreDevtoolsModule.instrument({
-            maxAge: 10
-        }),
         EffectsModule.forRoot([AlertEffect]),
         RouterModule.forRoot([
             {path: 'home', component: HomeComponent},
             { path: "counter", component: CounterComponent },
-        ])
+        ]),
+        StoreDevtoolsModule.instrument({
+            maxAge: 10
+        }),
     ],
     declarations: [
         AppComponent,
