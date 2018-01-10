@@ -19,8 +19,11 @@ import { AlertService } from "./services/alert.service";
         StoreModule.forRoot({ count: counterReducer }),
         EffectsModule.forRoot([AlertEffect]),
         RouterModule.forRoot([
-            {path: 'home', component: HomeComponent},
-            { path: "counter", component: CounterComponent },
+            {path: '', redirectTo: 'home', pathMatch: 'full'},
+			{path: 'home', component: HomeComponent},
+			{path: 'counter', component: CounterComponent},
+            {path: '**', redirectTo: 'home'}
+		
         ]),
         StoreDevtoolsModule.instrument({
             maxAge: 10
@@ -31,7 +34,13 @@ import { AlertService } from "./services/alert.service";
         HomeComponent,
         CounterComponent
     ],
-    providers:[Store, Actions, AlertService],
+    providers:[Store, Actions, AlertService, {
+        provide: 'BASE_URL',
+        useFactory: getBaseUrl
+    }],
     bootstrap: [AppComponent]    
 })
 export class AppModule {}
+export function getBaseUrl() {
+    return document.getElementsByTagName('base')[0].href;
+}
