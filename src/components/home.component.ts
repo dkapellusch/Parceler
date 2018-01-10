@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertService } from '../../services/alert.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
     selector: 'home',
@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
     constructor(private alertService: AlertService) {
         
     }
+   
     text: String = 'Hello world1';
     
     async test(event:Event) {

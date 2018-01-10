@@ -1,24 +1,43 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs/Observable";
 import { Store } from "@ngrx/store";
-import { INCREMENT, DECREMENT, RESET } from "../../reducers/counter.reducer";
+import { INCREMENT, DECREMENT, RESET } from "../reducers/counter.reducer";
 interface AppState {
   count: number;
 }
 
 @Component({
   selector: "app-counter",
+
+/*************************** HTML ***************************/
+  
   template: `
-  <div>
+
+<div>
     <button class="btn btn-primary btn2" (click)="increment()">Increment</button>
     <button class="btn btn-warning" (click)="decrement()">Decrement</button>
     <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
     <hr/>
     <div>Current Count: {{ count$ | async }}</div>
 </div>
+
   `,
-  styleUrls: ["./counter.component.css"]
-}as any)
+/*************************** HTML ***************************/
+
+
+/*************************** CSS ***************************/
+
+  styles:[`
+
+    .btn {
+        border: medium solid rgba(51, 50, 50, 0.123);
+    }
+
+  `]
+  
+/*************************** CSS ***************************/
+
+})
 export class CounterComponent {
 
   count$: Observable<number>;

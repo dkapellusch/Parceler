@@ -1,3 +1,9 @@
+import { Component, OnInit } from '@angular/core';
+import { AlertService } from '../services/alert.service';
+
+@Component({
+    selector: 'app',
+ template: `
 <div style="margin-left:50px;">
     <div>
         <a [routerLink]="['/home']">Home</a>
@@ -15,3 +21,13 @@
     <br>
     <router-outlet></router-outlet>
 </div>
+
+`
+,
+})
+
+export class AppComponent implements OnInit {
+
+    ngOnInit() {
+    }
+}
