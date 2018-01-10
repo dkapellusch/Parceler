@@ -8,7 +8,15 @@ interface AppState {
 
 @Component({
   selector: "app-counter",
-  templateUrl: "./counter.component.html",
+  template: `
+  <div>
+    <button class="btn btn-primary btn2" (click)="increment()">Increment</button>
+    <button class="btn btn-warning" (click)="decrement()">Decrement</button>
+    <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
+    <hr/>
+    <div>Current Count: {{ count$ | async }}</div>
+</div>
+  `,
   styleUrls: ["./counter.component.css"]
 }as any)
 export class CounterComponent {

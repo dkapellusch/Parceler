@@ -22,10 +22,8 @@ import { AlertService } from "./services/alert.service";
         }),
         EffectsModule.forRoot([AlertEffect]),
         RouterModule.forRoot([
-            { path: "", redirectTo: "home", pathMatch: "full" },
             {path: 'home', component: HomeComponent},
             { path: "counter", component: CounterComponent },
-            { path: "**", redirectTo: "home" }
         ])
     ],
     declarations: [

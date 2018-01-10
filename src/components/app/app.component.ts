@@ -8,10 +8,13 @@ import { AlertService } from '../../services/alert.service';
     <a [routerLink]="['/home']">Home</a>
 </div>
 <div>
-</div>
-<div>
     <a [routerLink]="['/counter']">Counter</a>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 <router-outlet></router-outlet>
 `
 ,
@@ -20,6 +23,5 @@ import { AlertService } from '../../services/alert.service';
 export class AppComponent implements OnInit {
 
     ngOnInit() {
-        console.log('Main component initialized');
     }
 }
