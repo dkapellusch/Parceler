@@ -20,13 +20,13 @@ export class HomeComponent implements OnInit {
     text: String = 'Hello world1';
     
     async fetchFromServer(event:Event) {
-        let response = await fetch("http://localhost:8081/api/test",{mode: 'cors'});
+        let response = await fetch("http://18.216.59.169:8081/api/test",{mode: 'cors'});
         let jsonResponse = await response.json();
         this.alertService.AlertSomething((JSON.stringify(jsonResponse)));
     }
     
     openWebSocket() {
-        this._socket = new WebSocket("ws://localhost:8081");
+        this._socket = new WebSocket("ws://18.216.59.169/:8081");
         this._socket.onmessage= (m) => {
             this.alertService.AlertSomething("Wow I got " + JSON.stringify(m.data));
         }
