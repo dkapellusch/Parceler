@@ -1,5 +1,5 @@
 import "zone.js";
-import "./styles.scss";
+import "./styles.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css";
 import "reflect-metadata";

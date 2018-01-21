@@ -12,6 +12,7 @@ export function InitializeSocketServer(server: Server) {
 
             console.log('received: %s', message);
             socket.send(`Hello, you sent -> ${message}`);
+            setTimeout(() => socket.send("Hi this is a follow up, hope you are good!"), 3000);
         });
 
         socket.on("error", () => console.log("connection error oh well"));

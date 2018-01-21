@@ -13,11 +13,11 @@ interface AppState {
   
   template: `
 
-<div style="margin: auto; width:100vw; display:inline-block;">
-    <button class="btn btn-primary btn2" (click)="increment()">Increment</button>
-    <button class="btn btn-warning" (click)="decrement()">Decrement</button>
-    <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
-    <div>Current Count: {{ count$ | async }}</div>
+<div class="container">
+    <button class="btn btn-primary btn2 flexItem" (click)="increment()">Increment</button>
+    <button class="btn btn-warning flexItem" (click)="decrement()">Decrement</button>
+    <button class="btn btn-danger flexItem" (click)="reset()">Reset Counter</button>
+    <span class="count flexItem">Current Count: {{ count$ | async }}</span>
 </div>
 <hr/>
 
@@ -31,6 +31,22 @@ interface AppState {
 
     .btn {
         border: medium solid rgba(51, 50, 50, 0.123);
+        margin:auto;
+    }
+
+    .count {
+       color: black !important;
+       margin:auto;
+    }
+
+    .container {
+      display:flex !important;
+      flex-direction:column;
+      padding-right:20%;
+    }
+
+    .flexItem {
+    
     }
 
   `]

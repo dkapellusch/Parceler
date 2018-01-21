@@ -3,6 +3,7 @@ import * as http from 'http';
 import * as WebSocket from 'ws';
 import { InitializeSocketServer } from './WebSocketService';
 import { InitializeApi } from './ApiConfigurationService';
+import { serializePath } from '@angular/router/src/url_tree';
 
 const PORT = process.env.PORT || 8081;
 const app = express();
