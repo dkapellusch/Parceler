@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     }
     
     openWebSocket() {
-        this._socket = new WebSocket("ws://18.216.59.169/:8081");
+        this._socket = new WebSocket("ws://18.216.59.169:8081");
         this._socket.onmessage= (m) => {
             this.alertService.AlertSomething("Wow I got " + JSON.stringify(m.data));
         }
